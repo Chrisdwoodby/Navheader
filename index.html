@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function showForm() {
+            document.getElementById('form-button').style.marginTop = '0px';
+            document.getElementById('formElement').style.display = 'inline-block';
+        }
+    var mouse_is_inside = false;
+    $(document).ready(function() {
+        $('#form_content').hover(function(){ 
+            mouse_is_inside=true; 
+        }, function(){ 
+        mouse_is_inside=false; 
+        });
+        $("body").mouseup(function(){ 
+        if(! mouse_is_inside) {
+          $('.form_wrapper').hide();
+          document.getElementById('form-button').style.marginTop = '10px';
+        }
+        });
+    });
+    </script>
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+      
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li ><a href="#">Bounce Houses</a></li>
+            <li><a href="#">Slides & Combos</a></li>
+            <li><a href="#">Obstacle Courses</a></li>
+            <li><a href="#">Add on's</a></li>
+          </ul>
+          <form class="form_wrapper" id="formElement" style="display: none;">
+            <div id="form_content" class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+            </div>
+          </form>
+          <button class="btn btn-default" id="form-button" onclick="showForm()"><span class="glyphicon glyphicon-search"></span> Search</button>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">FAQ's</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                </ul>
+              </li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div>
+      </nav>
+</body>
+</html>
